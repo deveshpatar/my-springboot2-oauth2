@@ -5,19 +5,25 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "usr")
 public class User {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private long id;
-    @Column
+    
+    @Column(name = "username")
     private String username;
-    @Column
+    
+    @Column(name = "password")
     @JsonIgnore
     private String password;
-    @Column
+    
+    @Column(name = "salary")
     private long salary;
-    @Column
+    
+    @Column(name = "age")
     private int age;
 
     public long getId() {
